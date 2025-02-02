@@ -88,8 +88,10 @@ function showQuestion() {
   }
 
   const currentQuestion = categoryQuestions[currentQuestionIndex];
+  const questionNumber = getQuestionNumber(); // Get the global question number
+
   questionElement.innerHTML = `
-    <p>${currentQuestion.question}</p>
+    <p><strong>Question ${questionNumber}:</strong> ${currentQuestion.question}</p>
     <div id="options">${currentQuestion.options.map(option => `<label><input type="checkbox" value="${option}"> ${option}</label>`).join("")}</div>
     <button id="submit-answer">Submit</button>
   `;
@@ -125,7 +127,17 @@ function showResult() {
   questionElement.innerHTML = "Quiz Completed!";
   nextButton.style.display = "none";
   restartButton.style.display = "block";
-  resultElement.textContent = `You scored ${score} out of ${selectedCategories.reduce((total, category) => total + questions[category].length, 0)}!`;
+
+  // Calculate and display the final score
+  const totalQuestions = selectedCategories.reduce((total, category) => total + questions[category].length, 0);
+  const percentageScore = ((score / totalQuestions) * 100).toFixed(2);
+
+  resultElement.innerHTML = `
+    <h3>Quiz Results:</h3>
+    <p>Total Questions: ${totalQuestions}</p>
+    <p>Correct Answers: ${score}</p>
+    <p>Your Score: ${percentageScore}%</p>
+  `;
   resultElement.classList.add("fade-in");
 }
 
@@ -133,6 +145,14 @@ function restartQuiz() {
   categorySelection.style.display = "block";
   quizContent.style.display = "none";
   resetQuiz();
+}
+
+function getQuestionNumber() {
+  let totalQuestionsBefore = 0;
+  for (let i = 0; i < currentCategoryIndex; i++) {
+    totalQuestionsBefore += questions[selectedCategories[i]].length;
+  }
+  return totalQuestionsBefore + currentQuestionIndex + 1;
 }
 
 restartButton.addEventListener("click", () => {
