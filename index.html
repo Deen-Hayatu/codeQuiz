@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML, CSS, JS Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>HTML, CSS, JS Quiz</h1>
+    <div id="category-selection">
+      <h3>Select Categories:</h3>
+      <label><input type="checkbox" name="category" value="HTML" checked> HTML</label>
+      <label><input type="checkbox" name="category" value="CSS" checked> CSS</label>
+      <label><input type="checkbox" name="category" value="JavaScript" checked> JavaScript</label>
+      <button id="start-btn">Start Quiz</button>
+    </div>
+    <div id="quiz-content" style="display: none;">
+      <div id="progress-bar">
+        <div id="progress"></div>
+      </div>
+      <div id="timer">Time Left: <span id="time">60</span>s</div>
+      <div id="question-container">
+        <p id="question"></p>
+        <div id="options"></div>
+      </div>
+      <button id="next-btn">Next Question</button>
+      <button id="restart-btn" style="display: none;">Restart Quiz</button>
+      <div id="result"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

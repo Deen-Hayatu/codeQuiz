@@ -1,0 +1,38 @@
+{
+  "HTML": [
+    {
+      "question": "What does HTML stand for?",
+      "options": ["Hyper Text Markup Language", "High Text Machine Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language"],
+      "answers": ["Hyper Text Markup Language"]
+    },
+    {
+      "question": "Which tags are used to create a hyperlink in HTML?",
+      "options": ["<link>", "<a>", "<href>", "<hyperlink>"],
+      "answers": ["<a>", "<link>"]
+    }
+  ],
+  "CSS": [
+    {
+      "question": "Which properties are used to change the text color in CSS?",
+      "options": ["text-color", "font-color", "color", "background-color"],
+      "answers": ["color"]
+    },
+    {
+      "question": "Which CSS properties control spacing between lines of text?",
+      "options": ["line-height", "spacing", "text-spacing", "line-spacing"],
+      "answers": ["line-height", "spacing"]
+    }
+  ],
+  "JavaScript": [
+    {
+      "question": "Which keywords are used to declare variables in JavaScript?",
+      "options": ["var", "let", "const", "All of the above"],
+      "answers": ["var", "let", "const"]
+    },
+    {
+      "question": "What is the output of `typeof null` in JavaScript?",
+      "options": ["null", "undefined", "object", "string"],
+      "answers": ["object"]
+    }
+  ]
+}
