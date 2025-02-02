@@ -123,21 +123,27 @@ function checkAnswer(selectedOptions) {
 }
 
 function showResult() {
-  clearInterval(timer);
-  questionElement.innerHTML = "Quiz Completed!";
-  nextButton.style.display = "none";
-  restartButton.style.display = "block";
+  clearInterval(timer); // Stop the timer
+  questionElement.innerHTML = "Quiz Completed!"; // Update the question container
+  nextButton.style.display = "none"; // Hide the "Next Question" button
+  restartButton.style.display = "block"; // Show the "Restart Quiz" button
 
-  // Calculate and display the final score
+  // Calculate total questions and percentage score
   const totalQuestions = selectedCategories.reduce((total, category) => total + questions[category].length, 0);
   const percentageScore = ((score / totalQuestions) * 100).toFixed(2);
 
+  // Debugging: Log results to the console
+  console.log(`Total Questions: ${totalQuestions}, Correct Answers: ${score}, Percentage Score: ${percentageScore}%`);
+
+  // Populate the result element with quiz results
   resultElement.innerHTML = `
     <h3>Quiz Results:</h3>
     <p>Total Questions: ${totalQuestions}</p>
     <p>Correct Answers: ${score}</p>
     <p>Your Score: ${percentageScore}%</p>
   `;
+
+  // Add fade-in effect
   resultElement.classList.add("fade-in");
 }
 

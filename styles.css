@@ -135,14 +135,14 @@ button:hover {
 
 #result {
   margin-top: 20px;
-  font-size: 1.2rem;
-  color: #ffffff;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  font-size: 1rem;
+  color: #ffffff; /* Text color */
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.5s ease; /* Smooth fade-in effect */
 }
 
 .fade-in {
-  opacity: 1;
+  opacity: 1; /* Fully visible */
 }
 
 @media (max-width: 768px) {
